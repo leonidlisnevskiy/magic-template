@@ -4,6 +4,13 @@ body
 	background-image: url("../img/body-bg.png")
 	background-repeat: repeat
 
+h2, h3
+	+font-family($philo-bold)
+	color: $violet
+	font-size: 30px
+	&.title-blue
+		color: $blue
+		font-size: $text-md // 24px
 // nav (burger) menu
 .nav
 	&-btn
@@ -49,51 +56,218 @@ body
 	width: 100%
 	+clr
 
+.content
+	text-align: center
 .content-wrapper
 	max-width: 1062px
 	margin: 0 auto
 	width: 100%
 	background-color: $body-bg
 	background-image: url("../img/head-bg.png")
+	background-repeat: no-repeat
 	box-shadow: $base-shadow
-	height: 777px
 
 .box-title
 	max-width: 760px
 	margin: 0 auto
 	text-align: center
+	background-image: url("../img/cry.png")
+	background-size: 100% 100%
+	padding: 25px 0
+	.sub-title
+		color: $black
+		+font-family($philo-bold)
+		display: inline-block
+		margin-bottom: 15px
+	h2
+		color: $violet
+		+font-family($philo-bold)
+		text-transform: uppercase
+		font-size: 36px
+		line-height: 0.83
+		margin: 20px auto 40px
+
+// Questions
+// --------------
+.questions
+	font-size: 0
+	&__item
+		display: inline-block
+		vertical-align: top
+		width: 31%
+		p
+			+font-family(Roboto)
+			font-size: $text-sm //16px
+			font-weight: 700
+		i
+			display: block
+			+sprite($s-icon-candle)
+			margin: 0 auto 10px
+
+// Title
+// -------
 
 .old-title
 	text-align: center
 	background-image: url("../img/oldtext-bg.png")
 	max-width: 780px
-	margin: 0 auto
+	margin: 23px auto 0px
 	padding: 70px 0 40px
 	background-repeat: no-repeat
 	background-size: 100% 100%
 	h2
 		font-size: 19.44px
-		color: $black
+		color: #202020
 	h3
 		font-size: 30.43px
 		color: $violet
 
 .box-text
+	margin: 20px auto
 	p
 		font-size: $text-reg //18px
 		color: $black
+		+font-family(Roboto)
+		font-weight: 300
+		font-size: $text-reg //18px
 
 .about
 	text-align: center
 	background-color: $violet
-	padding: 75px 65px 0 65px
+	padding: 75px 65px 65px 65px
 	text-align: justify
+	position: relative
+	&:before,
+	&:after
+		content: ""
+		display: block
+		position: absolute
+		left: 0
+		width: 100%
+	&:before
+		background-color: $violet-lighten-50
+		height: 90px
+		top: -190px
+	&:after
+		background-color: $violet-lighten-25
+		top: -100px
+		height: 100px
 	h4
 		font-size: $base-step //30px
 		color: $white
+		text-align: center
+		+font-family($philo-bold)
 	p
 		font-size: $text-reg //18px
+		+font-family($philo-bold)
 		color: $white
 		margin: 20px auto 15px
 		span
 			color: $lemony
+
+.video
+	z-index: 1
+	position: relative
+	iframe, img
+		max-width: 100%
+		height: auto
+
+.tired-box
+	max-width: 760px
+	margin: 30px auto 25px
+	display: inline-block
+	h3
+		+font-family($lobster-reg)
+		color: #075265
+.title-shape-main
+	position: relative
+	margin: 80px auto 110px
+	max-width: 490px
+	h3
+		margin: 20px 0px
+		font-size: 26px
+	&:before,
+	&:after
+		display: block
+		position: absolute
+		content: ""
+		width: 100%
+		height: 57px
+	&:before
+		top: -77px
+		background-image: url("../img/shape-top-big.png")
+	&:after
+		background-image: url("../img/shape-bottom-big.png")
+		top: 77px
+
+.title-shape
+	position: relative
+	padding-bottom: 60px
+	&:after
+		content: ""
+		display: block
+		position: absolute
+		top: 41px
+		left: 0
+		width: 100%
+		background-image: url("../img/shape-bottom.png")
+		height: 32px
+		background-repeat: no-repeat
+		background-position-x: center
+
+
+// List Star
+// ------------
+.list-star
+	font-size: 0
+	margin-bottom: 65px
+	li
+		display: inline-block
+		vertical-align: top
+		width: 25%
+	p
+		font-size: $text-reg //18px
+		+font-family(Roboto)
+		font-weight: 400
+	i
+		display: block
+		margin: 10px auto 10px
+		&.icon-sun
+			+sprite($s-icon-sun)
+
+// List Rune
+.list-rune
+	li
+		display: inline-block
+		vertical-align: top
+		width: 30%
+		.img-box
+			position: relative
+			i
+				position: absolute
+				top: 50%
+				left: 50%
+				transform: translate(-50%, -50%)
+		i
+			display: block
+			margin: 0 auto
+			&.icon-umbrella
+				+sprite($s-icon-umbrella)
+			&.icon-clock
+				+sprite($s-icon-clock)
+			&.icon-shield
+				+sprite($s-icon-shield)
+		h3
+			font-size: 24px
+			margin: 24px auto 20px
+		p
+			font-size: $text-reg
+			+font-family(Roboto)
+			font-weight: 400
+			color: #202020
+			padding: 0 20px
+
+.papper-bg
+	background-image: url("../img/oldpapper-bg.png")
+	padding: 65px 0px 75px 0px
+	+cover
