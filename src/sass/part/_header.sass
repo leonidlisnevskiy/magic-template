@@ -1,0 +1,43 @@
+.header
+	padding: 24px 0 57px 0
+	&__nav
+		text-align: center
+		border: 2px solid #8b8b8e
+		padding: 15px 40px
+		margin: 0 auto
+		border-radius: 2px
+		background-color: #f5e0c1
+		.nav
+			ul
+				font-size: 0
+				li
+					display: inline-block
+					margin: 0 24px
+					&:last-child
+						a
+							&:after
+								content: ""
+								display: block
+								position: absolute
+								+sprite($s-icon-sun)
+								top: -6px
+								right: -40px
+					a
+						font-size: $text-sm // 16px
+						text-decoration: none
+						transition: color .25s ease
+						color: $black
+						line-height: 1.8
+						+font-family(Roboto)
+						font-weight: 700
+						text-transform: uppercase
+						position: relative
+						&:hover
+							color: $violet
+						&:before
+							content: ""
+							display: block
+							position: absolute
+							+sprite($s-icon-sun)
+							top: -6px
+							left: -40px

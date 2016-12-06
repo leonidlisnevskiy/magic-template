@@ -1,0 +1,99 @@
+// Scaffolding
+// ----------------
+body
+	background-image: url("../img/body-bg.png")
+	background-repeat: repeat
+
+// nav (burger) menu
+.nav
+	&-btn
+		display: none
+		float: left
+		background-color: $orange
+		border: none
+		cursor: pointer
+		position: relative
+		height: 50px
+		width: 50px
+		padding: 0
+		outline: none
+		&:active
+			top: 1px
+		+r(768)
+			display: block
+		span
+			border-radius: 2px
+			width: 30px
+			height: 3px
+			margin: 0 auto
+			background: $white
+			display: block
+			position: relative
+			&:before,
+			&:after
+				position: absolute
+				height: 3px
+				background: $white
+				content: ""
+				border-radius: 2px
+				left: 0
+				right: 0
+			&:before
+				top: -7px
+			&:after
+				bottom: -7px
+
+.inner
+	max-width: 960px
+	margin: 0 auto
+	width: 100%
+	+clr
+
+.content-wrapper
+	max-width: 1062px
+	margin: 0 auto
+	width: 100%
+	background-color: $body-bg
+	background-image: url("../img/head-bg.png")
+	box-shadow: $base-shadow
+	height: 777px
+
+.box-title
+	max-width: 760px
+	margin: 0 auto
+	text-align: center
+
+.old-title
+	text-align: center
+	background-image: url("../img/oldtext-bg.png")
+	max-width: 780px
+	margin: 0 auto
+	padding: 70px 0 40px
+	background-repeat: no-repeat
+	background-size: 100% 100%
+	h2
+		font-size: 19.44px
+		color: $black
+	h3
+		font-size: 30.43px
+		color: $violet
+
+.box-text
+	p
+		font-size: $text-reg //18px
+		color: $black
+
+.about
+	text-align: center
+	background-color: $violet
+	padding: 75px 65px 0 65px
+	text-align: justify
+	h4
+		font-size: $base-step //30px
+		color: $white
+	p
+		font-size: $text-reg //18px
+		color: $white
+		margin: 20px auto 15px
+		span
+			color: $lemony
