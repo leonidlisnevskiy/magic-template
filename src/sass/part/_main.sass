@@ -86,6 +86,26 @@ h2, h3
 				color: #3c3f3f
 				line-height: 1.2
 
+// help
+.help
+	.box-text
+		margin-bottom: 45px
+		p
+			+font-family($philo-bold)
+			font-size: 19.44px
+	.content
+		p
+			+font-family(Roboto)
+			font-weight: 300
+			font-size: 16px
+			color: #010101
+			margin-bottom: 30px
+			a
+				color: $red
+	.title-shape-main
+		max-width: 700px
+		&:after
+			top: 100%
 
 .box-title
 	max-width: 760px
@@ -144,6 +164,7 @@ h2, h3
 
 .box-text
 	margin: 20px auto
+	display: inline-block
 	p
 		font-size: $text-reg //18px
 		color: $black
