@@ -7,6 +7,21 @@
 		margin: 0 auto
 		border-radius: 2px
 		background-color: #f5e0c1
+		position: relative
+		box-shadow: inset 0px -10px 30px rgba(70,69,69,0.30)
+		&:before,
+		&:after
+			content: ""
+			display: block
+			position: absolute
+			top: 50%
+			transform: translateY(-50%)
+		&:before
+			left: -39px
+			+sprite($s-icon-menu-left)
+		&:after
+			right: -39px
+			+sprite($s-icon-menu-right)
 		.nav
 			ul
 				font-size: 0

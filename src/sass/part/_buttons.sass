@@ -1,0 +1,33 @@
+.btn
+	border-radius: 50px
+	border: none
+	cursor: pointer
+	outline: none
+	padding: 24px 55px
+	background-color: $orange
+	color: $white
+	text-transform: uppercase
+	+font-family(Roboto)
+	font-weight: 700
+	font-size: 24px
+	will-change: transform
+	transition: all .24s ease
+	position: relative
+	&-arrow
+		opacity: .95
+		&:before
+			position: absolute
+			content: ""
+			top: 50%
+			transform: translateY(-50%)
+			left: 20px
+			transition: all .24s ease
+			+sprite($s-icon-arrow-btn)
+			display: block
+		&:hover
+			opacity: 1
+			box-shadow: inset 0px 2px 20px rgba(128,128,128,0.5)
+			&:before
+				left: 23px
+		&:active
+			box-shadow: none
