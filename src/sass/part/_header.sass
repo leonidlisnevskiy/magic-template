@@ -15,10 +15,10 @@
 		+r(1300)
 			display: none
 	&:before
-		background-image: url("/img/head-pic-left.png")
+		background-image: url("../img/head-pic-left.png")
 		left: -185px
 	&:after
-		background-image: url("/img/head-pic-right.png")
+		background-image: url("../img/head-pic-right.png")
 		right: -185px
 	&__nav
 		text-align: center
@@ -36,12 +36,10 @@
 			max-width: 60%
 			display: none
 			&.is-active
-				display: block
-				position: absolute
-				top: 24px
-				left: 50%
-				transform: translateX(-50%)
-				z-index: 11
+				display: inline-block
+				max-width: 100%
+				margin-top: 20px
+				width: 100%
 		&:before,
 		&:after
 			content: ""
@@ -63,12 +61,14 @@
 				li
 					display: inline-block
 					margin: 0 24px
+					&.is-current
+						a
+							color: $violet
 					+r(991)
 						margin: 0 15px
 					+r(768)
 						width: 100%
 						margin: 0 auto 10px
-						text-align: left
 					&:last-child
 						a
 							&:after
