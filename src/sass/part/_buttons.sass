@@ -15,6 +15,8 @@
 	position: relative
 	&-arrow
 		opacity: .95
+		+r(480)
+			font-size: 18px
 		&:before
 			position: absolute
 			content: ""
@@ -24,6 +26,8 @@
 			transition: all .24s ease
 			+sprite($s-icon-arrow-btn)
 			display: block
+			+r(390)
+				display: none
 		&:hover
 			opacity: 1
 			box-shadow: inset 0px 2px 20px rgba(128,128,128,0.5)
@@ -31,3 +35,37 @@
 				left: 23px
 		&:active
 			box-shadow: none
+
+
+.btn-comment
+	text-decoration: none
+	background-color: $orange
+	border: 2px solid #d86c1e
+	border-radius: 50px
+	width: 260px
+	display: inline-block
+	will-change: opacity, transition
+	transition: opacity .25s linear
+	opacity: .95
+	&:hover
+		opacity: 1
+	.icon-box
+		display: inline-block
+		background-color: #d86c1e
+		border-radius: 50px
+		float: left
+		padding: 0 16px 0 5px
+		i
+			display: block
+			&.icon-comment
+				margin: 10px 0 10px 18px
+				padding: 9px 16px
+				+sprite($s-icon-comment)
+				float: left
+	p
+		font-size: 14.4px
+		color: $white
+		text-transform: uppercase
+		+font-family(Roboto)
+		font-weight: 900
+		margin-top: 13px

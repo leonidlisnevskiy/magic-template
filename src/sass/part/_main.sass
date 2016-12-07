@@ -4,10 +4,15 @@ body
 	background-image: url("../img/body-bg.png")
 	background-repeat: repeat
 
+.out
+	overflow: hidden
+
 h2, h3
 	+font-family($philo-bold)
 	color: $violet
 	font-size: 30px
+	+r(768)
+		font-size: 24px
 	&.title-blue
 		color: $blue
 		font-size: $text-md // 24px
@@ -17,13 +22,19 @@ h2, h3
 		display: none
 		float: left
 		background-color: $orange
-		border: none
 		cursor: pointer
 		position: relative
+		opacity: .9
 		height: 50px
 		width: 50px
 		padding: 0
+		border-radius: 50px
+		border: 2px solid #d86c1e
 		outline: none
+		left: 30px
+		transition: all .25s linear
+		&:hover, &:focus
+			opacity: 1
 		&:active
 			top: 1px
 		+r(768)
@@ -55,6 +66,8 @@ h2, h3
 	margin: 0 auto
 	width: 100%
 	+clr
+	+r(768)
+		padding: 0 10px
 
 .content
 	text-align: center
@@ -85,15 +98,24 @@ h2, h3
 			p, h3
 				color: #3c3f3f
 				line-height: 1.2
+	.content
+		h2
+			+r(768)
+				margin-top: 20px
 
 // help
 .help
 	.box-text
 		margin-bottom: 45px
+		+r(768)
+			margin-bottom: 0
 		p
 			+font-family($philo-bold)
 			font-size: 19.44px
 	.content
+		h2
+			+r(768)
+				margin-top: 20px
 		p
 			+font-family(Roboto)
 			font-weight: 300
@@ -102,10 +124,93 @@ h2, h3
 			margin-bottom: 30px
 			a
 				color: $red
+		.footer p a
+			color: inherit
+		.timer-box
+			p
+				color: $orange
+				font-weight: 500
 	.title-shape-main
 		max-width: 700px
 		&:after
 			top: 100%
+
+// reviews
+.reviews
+	.content
+		.inner
+			position: relative
+	.btn-comment
+		position: absolute
+		right: 0
+		top: -9px
+		+r(768)
+			position: static
+			margin-top: 18px
+	.review__list
+		margin: 45px auto 265px
+		+r(991)
+			margin: 45px auto 165px
+		+r(768)
+			margin: 35px auto 100px
+		+r(667)
+			margin: 35px auto 0px
+	.review__field
+		text-align: left
+		background-image: url("/img/comment-bg.png")
+		background-repeat: no-repeat
+		background-position: center center
+		background-size: 100% 100%
+		display: inline-block
+		border-radius: 10px
+		+clr
+		width: 100%
+		margin-bottom: 13px
+		padding: 32px 34px 32px 24px
+		+r(768)
+			text-align: center
+			background-size: cover
+			padding: 15px 10px
+		.review__userpic
+			float: left
+			position: relative
+			margin-right: 20px
+			width: 187px
+			height: 187px
+			+r(768)
+				float: none
+				margin: 0 auto 20px
+			&:after
+				width: 187px
+				background-image: url("/img/userpic-border.png")
+				height: 187px
+				background-repeat: no-repeat
+				background-position: center center
+				content: ""
+				display: block
+				position: absolute
+				top: 0
+				left: 0
+			img
+				position: absolute
+				top: 50%
+				left: 50%
+				transform: translate(-50%, -50%)
+	.review__username
+		font-size: 24px
+		+font-family($philo-bold)
+		display: inline-block
+		color: #202020
+	.review__comment
+		font-size: 16px
+		display: table
+		color: $black
+		+font-family($philo-bolditalic)
+		margin-top: 18px
+		+r(768)
+			margin-top: 10px
+			font-size: 15px
+
 
 .box-title
 	max-width: 760px
@@ -114,6 +219,8 @@ h2, h3
 	background-image: url("../img/cry.png")
 	background-size: 100% 100%
 	padding: 25px 0
+	+r(600)
+		background-image: none
 	.sub-title
 		color: $black
 		+font-family($philo-bold)
@@ -126,6 +233,9 @@ h2, h3
 		font-size: 36px
 		line-height: 0.83
 		margin: 20px auto 40px
+		+r(768)
+			margin: 20px auto 10px
+			font-size: 28px
 
 // Questions
 // --------------
@@ -135,6 +245,8 @@ h2, h3
 		display: inline-block
 		vertical-align: top
 		width: 31%
+		+r(580)
+			width: 80%
 		p
 			+font-family(Roboto)
 			font-size: $text-sm //16px
@@ -158,9 +270,13 @@ h2, h3
 	h2
 		font-size: 19.44px
 		color: #202020
+		+r(580)
+			font-size: 16px
 	h3
 		font-size: 30.43px
 		color: $violet
+		+r(580)
+			font-size: 22px
 
 .box-text
 	margin: 20px auto
@@ -178,6 +294,9 @@ h2, h3
 	padding: 75px 65px 65px 65px
 	text-align: justify
 	position: relative
+	+r(768)
+		padding: 20px
+		text-align: center
 	&:before,
 	&:after
 		content: ""
@@ -224,10 +343,14 @@ h2, h3
 	position: relative
 	margin: 80px auto 110px
 	max-width: 490px
+	+r(520)
+		margin: 30px auto
 	h3
 		margin: 20px 0px
 		display: inline-block
 		font-size: 26px
+		+r(768)
+			font-size: 18px
 	&:before,
 	&:after
 		display: block
@@ -237,6 +360,8 @@ h2, h3
 		height: 57px
 		background-repeat: no-repeat
 		background-position-x: center
+		+r(520)
+			display: none
 	&:before
 		top: -57px
 		background-image: url("../img/shape-top-big.png")
@@ -269,6 +394,10 @@ h2, h3
 		display: inline-block
 		vertical-align: top
 		width: 25%
+		+r(768)
+			width: 50%
+		+r(480)
+			width: 100%
 	p
 		font-size: $text-reg //18px
 		+font-family(Roboto)
@@ -286,6 +415,11 @@ h2, h3
 		display: inline-block
 		vertical-align: top
 		width: 30%
+		+r(768)
+			width: 100%
+			margin-bottom: 30px
+			&:last-child
+				margin-bottom: 0
 		.img-box
 			position: relative
 			i
@@ -316,7 +450,9 @@ h2, h3
 	background-image: url("../img/oldpapper-bg.png")
 	padding: 65px 0px 75px 0px
 	+cover
-
+#timer-element-ba4de9b4fd12598aac816f7649af5908-secundes
+	+r(530)
+		display: none !important
 .form-container
 	max-width: 790px
 	margin: 0 auto 60px
@@ -326,9 +462,13 @@ h2, h3
 	h3
 		font-size: 24px
 		line-height: 1.5
+		+r(768)
+			font-size: 18px
 		strong
 			font-size: 36px
 			line-height: 1.66
+			+r(768)
+				font-size: 30px
 .timer-box
 	margin: 36px auto
 	p
@@ -338,6 +478,11 @@ h2, h3
 		font-weight: 500
 		text-transform: uppercase
 		margin-bottom: 18px
+	+r(480)
+		*
+			display: none
+		p
+			display: block !important
 form
 	max-width: 500px
 	margin: 0 auto

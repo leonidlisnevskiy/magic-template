@@ -1,14 +1,47 @@
 .header
 	padding: 24px 0 57px 0
+	position: relative
+	+r(768)
+		padding: 24px 0 0px
+	&:before,
+	&:after
+		content: ""
+		display: block
+		position: absolute
+		top: 0
+		width: 184px
+		height: 315px
+		background-repeat: no-repeat
+		+r(1300)
+			display: none
+	&:before
+		background-image: url("/img/head-pic-left.png")
+		left: -185px
+	&:after
+		background-image: url("/img/head-pic-right.png")
+		right: -185px
 	&__nav
 		text-align: center
 		border: 2px solid #8b8b8e
 		padding: 15px 40px
 		margin: 0 auto
 		border-radius: 2px
+		max-width: 80%
 		background-color: #f5e0c1
 		position: relative
 		box-shadow: inset 0px -10px 30px rgba(70,69,69,0.30)
+		+r(991)
+			padding: 15px 20px
+		+r(768)
+			max-width: 60%
+			display: none
+			&.is-active
+				display: block
+				position: absolute
+				top: 24px
+				left: 50%
+				transform: translateX(-50%)
+				z-index: 11
 		&:before,
 		&:after
 			content: ""
@@ -16,6 +49,8 @@
 			position: absolute
 			top: 50%
 			transform: translateY(-50%)
+			+r(768)
+				display: none
 		&:before
 			left: -39px
 			+sprite($s-icon-menu-left)
@@ -28,6 +63,12 @@
 				li
 					display: inline-block
 					margin: 0 24px
+					+r(991)
+						margin: 0 15px
+					+r(768)
+						width: 100%
+						margin: 0 auto 10px
+						text-align: left
 					&:last-child
 						a
 							&:after
@@ -37,6 +78,8 @@
 								+sprite($s-icon-sun)
 								top: -6px
 								right: -40px
+								+r(900)
+									display: none
 					a
 						font-size: $text-sm // 16px
 						text-decoration: none
@@ -56,3 +99,7 @@
 							+sprite($s-icon-sun)
 							top: -6px
 							left: -40px
+							+r(991)
+								left: -30px
+							+r(900)
+								display: none
